@@ -1,21 +1,24 @@
 import { Routes } from '@angular/router';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { CompanyComponent } from './company/company.component';
-import { UserComponent } from './user/user.component';
-import { AccountComponent } from './account/account.component';
-import { TransactionComponent } from './transaction/transaction.component';
-import { InvoiceComponent } from './invoice/invoice.component';
-import { VendorComponent } from './vendor/vendor.component';
-import { CustomerComponent } from './customer/customer.component';
-import { ItemComponent } from './item/item.component';
-import { PayrollComponent } from './payroll/payroll.component';
-import { EmployeeComponent } from './employee/employee.component';
-import { TaxCodeComponent } from './tax-code/tax-code.component';
-import { AuditLogComponent } from './audit-log/audit-log.component';
-import { HomeComponent } from './home/home.component';
+import { DashboardComponent } from './private/dashboard/dashboard.component';
+import { CompanyComponent } from './private/company/company.component';
+import { UserComponent } from './private/user/user.component';
+import { AccountComponent } from './private/account/account.component';
+import { TransactionComponent } from './private/transaction/transaction.component';
+import { InvoiceComponent } from './private/invoice/invoice.component';
+import { VendorComponent } from './private/vendor/vendor.component';
+import { CustomerComponent } from './private/customer/customer.component';
+import { ItemComponent } from './private/item/item.component';
+import { PayrollComponent } from './private/payroll/payroll.component';
+import { EmployeeComponent } from './private/employee/employee.component';
+import { TaxCodeComponent } from './private/tax-code/tax-code.component';
+import { AuditLogComponent } from './private/audit-log/audit-log.component';
+import { HomeComponent } from './public/home/home.component';
 import { PublicLayoutComponent } from './layouts/public-layout/public-layout.component';
 import { PrivateLayoutComponent } from './layouts/private-layout/private-layout.component';
-import { NotFoundComponent } from './not-found/not-found.component';
+import { NotFoundComponent } from './shared/not-found/not-found.component';
+import { AboutUsComponent } from './public/about-us/about-us.component';
+import { LoginPopupComponent } from './shared/login-popup/login-popup.component';
+import { SignUpComponent } from './shared/sign-up/sign-up.component';
 
 export const routes: Routes = [
     {
@@ -23,7 +26,11 @@ export const routes: Routes = [
         component: PublicLayoutComponent,
         children: [
             { path: '', component: HomeComponent },
-            // Add more public routes here if necessary
+            { path: 'signup', component: SignUpComponent },
+            { path: 'about-us', component: AboutUsComponent }
+
+
+
         ],
     },
     {

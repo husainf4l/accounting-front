@@ -1,0 +1,81 @@
+<div class="sign-up-container">
+    <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+        <h2>Sign Up</h2>
+
+        <!-- Display error message -->
+        <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+
+        <div>
+            <label for="email">Email</label>
+            <input id="email" formControlName="email" type="email" required />
+        </div>
+
+        <div>
+            <label for="password">Password</label>
+            <input id="password" formControlName="password" type="password" required />
+        </div>
+
+        <div>
+            <label for="firstName">First Name</label>
+            <input id="firstName" formControlName="firstName" type="text" required />
+        </div>
+
+        <div>
+            <label for="lastName">Last Name</label>
+            <input id="lastName" formControlName="lastName" type="text" required />
+        </div>
+
+        <fieldset formGroupName="company">
+            <legend>Company Information</legend>
+            <div>
+                <label for="companyName">Company Name</label>
+                <input id="companyName" formControlName="name" type="text" required />
+            </div>
+
+            <div>
+                <label for="companyAddress">Address</label>
+                <input id="companyAddress" formControlName="address" type="text" required />
+            </div>
+
+            <div>
+                <label for="companyPhone">Phone</label>
+                <input id="companyPhone" formControlName="phone" type="text" required />
+            </div>
+
+            <div>
+                <label for="companyEmail">Email</label>
+                <input id="companyEmail" formControlName="email" type="email" required />
+            </div>
+
+            <div>
+                <label for="companyTaxId">Tax ID</label>
+                <input id="companyTaxId" formControlName="taxId" type="text" required />
+            </div>
+        </fieldset>
+
+        <div>
+            <label for="role">Role</label>
+            <select id="role" formControlName="role" required>
+                <option value="ADMIN">Admin</option>
+                <option value="ACCOUNTANT">Accountant</option>
+                <option value="USER">User</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="accessLevel">Access Level</label>
+            <select id="accessLevel" formControlName="accessLevel" required>
+                <option value="FULL_ACCESS">Full Access</option>
+                <option value="INVOICING_ONLY">Invoicing Only</option>
+                <option value="VIEW_ONLY">View Only</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="permissions">Permissions (JSON)</label>
+            <textarea id="permissions" formControlName="permissions"></textarea>
+        </div>
+
+        <button type="submit">Sign Up</button>
+    </form>
+</div>
